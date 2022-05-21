@@ -17,7 +17,12 @@ function loadHTML(){
     document.getElementById('bodie').innerHTML = this.responseText;
    
   };
+  xhttp.ontimeout = function () {
+        document.getElementById('connectionLabel').innerHTML = "Device Not Connected";
+    };
+  
   xhttp.open("GET", "https://raw.githubusercontent.com/YasAlex/Web/main/bdmain.html");
+  xhttp.timeout=80;
   xhttp.send();
   */
   
