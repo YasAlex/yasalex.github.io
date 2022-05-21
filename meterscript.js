@@ -24,13 +24,16 @@ function loadHTML(){
 }
 function other()
 {
+  
   //document.getElementById('page-logo').ondragstart = function() { return false; };
   //document.getElementById('sensor-text').ondragstart = function() { return false; };
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-   
+  
    if (this.readyState == 4 && this.status == 200) {
      var split_text = this.responseText.split('\r\n');
+     var dt = new Date();
+     document.getElementById('date').innerHTML=dt;
      document.getElementById('flujo').innerHTML=split_text[0];
      document.getElementById('litros').textContent=split_text[1];
      document.getElementById('pulsos').textContent=split_text[2];
