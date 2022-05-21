@@ -1,6 +1,6 @@
 function DataLoad() {
   loadHTML();
-  other();
+  setInterval(other, 500);
 }
 function loadHTML(){
   //fetch('https://raw.githubusercontent.com/YasAlex/Web/main/MeterV001/bdmain.html')
