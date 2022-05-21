@@ -28,7 +28,7 @@ function other()
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
    
-   if (/*this.readyState == 4 &&*/ this.status == 200) {
+   if (this.readyState == 4 && this.status == 200) {
      var split_text = this.responseText.split('\r\n');
      document.getElementById('flujo').innerHTML=split_text[0];
      document.getElementById('litros').textContent=split_text[1];
