@@ -4,7 +4,7 @@ function DataLoad() {
 }
 function loadHTML(){
   //fetch('https://raw.githubusercontent.com/YasAlex/Web/main/MeterV001/bdmain.html')
-  fetch('https://yasalex.github.io/bdmain.html')
+  fetch('https://yasalex.github.io/FMV001/bdmain.html')
   .then(response=> response.text())
   .then(text=> document.getElementById('bodie').innerHTML = text);
   
