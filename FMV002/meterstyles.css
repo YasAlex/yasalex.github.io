@@ -123,19 +123,19 @@ li a:hover {
   padding-top: 20px;
 }
 
-.left {
+.leftsp {
   left:0%;
   width: 40%;
   background-color:rgb(80,80,80);
 }
 
-.right {
+.rightsp {
   right: 0%;
   width: 60%;
   background-color: rgb(100,100,100);
 }
 
-.centered {
+.centeredsp {
   position: absolute;
   top: 0%;
   left: 50%;
@@ -150,11 +150,11 @@ li a:hover {
   text-align: center;
 }
 
-.centered img {
+.centeredsp img {
   width: 150px;
   border-radius: 50%;
 }
-.centered  td{
+.centeredsp  td{
     text-align: left;
   }
 
@@ -167,41 +167,41 @@ li a:hover {
   }
 
 @media (min-width: 349px) {
-  .centered table{
+  .centeredsp table{
       font-size: 90%;
       width: 180px;
   }
-  .centered td, .centered th{
+  .centeredsp td, .centeredsp th{
       width: 50px;
   }
 }
 
 @media (min-width: 650px) {
-  .centered table{
+  .centeredsp table{
       font-size: 100%;
       width: 200px;
   }
-  .centered td, .centered th{
+  .centeredsp td, .centeredsp th{
       width: 50px;
   }
 }
 
 @media (min-width: 750px) {
-  .centered table{
+  .centeredsp table{
       font-size: 150%;
       width: 300px;
   }
-   .centered td, .centered th{
+   .centeredsp td, .centeredsp th{
       width: 50px;
   }
 }
 
 @media (min-width: 1000px) {
-  .centered table{
+  .centeredsp table{
       font-size: 200%;
       width: 400px;
   }
-   .centered td, .centered th{
+   .centeredsp td, .centeredsp th{
       width: 50px;
   }
 }
