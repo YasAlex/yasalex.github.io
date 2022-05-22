@@ -73,3 +73,13 @@ function other()
   xhttp.timeout=450;
   try {xhttp.send(null);}catch (error) {}
 }
+function N0P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X0")}
+function N1P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X1")}
+function N2P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X2")}
+function N3P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X3")}
+function N4P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X4")}
+function N5P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X5")}
+function N6P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X6")}
+function N7P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X7")}
+function N8P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X8")}
+function N9P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X9")}
