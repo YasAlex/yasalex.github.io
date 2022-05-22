@@ -29,11 +29,11 @@ function loadHTML(page){
   document.getElementById('bodie').innerHTML="";
    fetch('https://yasalex.github.io/FMV002/navbar.html')
   .then(response=> response.text())
-  .then(text=> document.getElementById('bodie').innerHTML += text);
+  .then(text=> document.getElementById('bodie').innerHTML = text);
   
    fetch(page)
   .then(response=> response.text())
-  .then(text=> document.getElementById('content').innerHTML += text);
+  .then(text=> document.getElementById('content').innerHTML = text);
 }
 
 function loadContent(page){
@@ -42,7 +42,7 @@ function loadContent(page){
   
    fetch(page)
   .then(response=> response.text())
-  .then(text=> document.getElementById('content').innerHTML += text);
+  .then(text=> document.getElementById('content').innerHTML = text);
 }
 
 function other()
