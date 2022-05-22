@@ -84,7 +84,7 @@ function N7P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X7
 function N8P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X8")}
 function N9P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X9")}
 
-function BKSP(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "nw/xbksp"   )}
+function BKSP(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xbksp"   )}
 function CLR(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xci/0"  )}
 function RST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xres/1" )}
 function PRST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xpr/0"  )}
