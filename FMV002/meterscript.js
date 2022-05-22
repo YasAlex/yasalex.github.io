@@ -1,4 +1,4 @@
-var currentPage="https://yasalex.github.io/FMV002/bdmain.html";
+var currentPage="";
 function homeFn()
 {
   loadContent('https://yasalex.github.io/FMV002/bdmain.html');
