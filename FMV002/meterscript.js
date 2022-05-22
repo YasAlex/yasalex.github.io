@@ -1,3 +1,4 @@
+var currentPage="https://yasalex.github.io/FMV002/bdmain.html";
 function homeFn()
 {
   loadContent('https://yasalex.github.io/FMV002/bdmain.html');
@@ -22,6 +23,7 @@ function DataLoad() {
   setInterval(other, 500);
 }
 function loadHTML(page){
+  currentPage = page;
   var navBar="Holo";
   var Bodie="Manolo";
   document.getElementById('bodie').innerHTML="";
@@ -35,7 +37,7 @@ function loadHTML(page){
 }
 
 function loadContent(page){
-
+  currentPage = page;
   document.getElementById('content').innerHTML="";
   
    fetch(page)
@@ -47,7 +49,7 @@ function other()
 {
   
      var dt = new Date();
-     document.getElementById('date').innerHTML=dt;
+     try{document.getElementById('date').innerHTML=dt;}catch(error){loadContent(currentPage);}
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
   
@@ -69,7 +71,5 @@ function other()
     };
   xhttp.open("GET", varFileDir);
   xhttp.timeout=450;
-  try {
-  xhttp.send(null);
-  }catch (error) {}
+  try {xhttp.send(null);}catch (error) {}
 }
