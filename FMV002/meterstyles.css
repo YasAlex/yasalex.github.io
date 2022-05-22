@@ -113,3 +113,95 @@ li a {
 li a:hover {
   background-color: #111;
 }
+.split {
+  height: 100%;
+  
+  position: fixed;
+  z-index: 1;
+  //top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.left {
+  left:0%;
+  width: 40%;
+  background-color:rgb(80,80,80);
+}
+
+.right {
+  right: 0%;
+  width: 60%;
+  background-color: rgb(100,100,100);
+}
+
+.centered {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  text-align: center;
+}
+.smoll {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-0%, -0%);
+  text-align: center;
+}
+
+.centered img {
+  width: 150px;
+  border-radius: 50%;
+}
+.centered  td{
+    text-align: left;
+  }
+
+  .smoll table{
+      font-size: 90%;
+      width: 180px;
+  }
+  .smoll td, .smoll th{
+      width: 50px;
+  }
+
+@media (min-width: 349px) {
+  .centered table{
+      font-size: 90%;
+      width: 180px;
+  }
+  .centered td, .centered th{
+      width: 50px;
+  }
+}
+
+@media (min-width: 650px) {
+  .centered table{
+      font-size: 100%;
+      width: 200px;
+  }
+  .centered td, .centered th{
+      width: 50px;
+  }
+}
+
+@media (min-width: 750px) {
+  .centered table{
+      font-size: 150%;
+      width: 300px;
+  }
+   .centered td, .centered th{
+      width: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .centered table{
+      font-size: 200%;
+      width: 400px;
+  }
+   .centered td, .centered th{
+      width: 50px;
+  }
+}
