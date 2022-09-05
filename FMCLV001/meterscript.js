@@ -34,7 +34,7 @@ function loadHTML(page){
    fetch(page)
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
-  document.getElementById('sensorTitle').innerHTML="Titulo Sensor";
+  document.getElementById('sensorTitle').innerHTML=varSensorName;
 }
 
 function loadContent(page){
