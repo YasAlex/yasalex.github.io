@@ -39,7 +39,7 @@ function loadHTML(page){
 function loadContent(page){
   currentPage = page;
   document.getElementById('content').innerHTML="";
-  
+  document.getElementById('sensorTitle').innerHTML="Titulo Sensor";
    fetch(page)
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
