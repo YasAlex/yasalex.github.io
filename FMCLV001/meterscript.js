@@ -1,11 +1,11 @@
 var currentPage="";
 function homeFn()
 {
-  loadContent('https://yasalex.github.io/FMV002/bdmain.html');
+  loadContent('https://yasalex.github.io/FMCLV001/bdmain.html');
 }
 function newsFn()
 {
-  loadContent('https://yasalex.github.io/FMV002/bdtwo.html');
+  loadContent('https://yasalex.github.io/FMCLV001/bdtwo.html');
 }
 function contactFn()
 {
@@ -19,7 +19,7 @@ function aboutFn()
 
 
 function DataLoad() {
-  loadHTML('https://yasalex.github.io/FMV002/bdmain.html');
+  loadHTML('https://yasalex.github.io/FMCLV001/bdmain.html');
   setInterval(other, 500);
 }
 function loadHTML(page){
@@ -27,7 +27,7 @@ function loadHTML(page){
   var navBar="Holo";
   var Bodie="Manolo";
   document.getElementById('bodie').innerHTML="";
-   fetch('https://yasalex.github.io/FMV002/navbar.html')
+   fetch('https://yasalex.github.io/FMCLV001/navbar.html')
   .then(response=> response.text())
   .then(text=> document.getElementById('bodie').innerHTML = text);
   
