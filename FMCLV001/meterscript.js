@@ -20,7 +20,7 @@ function aboutFn()
 
 function DataLoad() {
   loadHTML('https://yasalex.github.io/FMCLV001/bdmain.html');
-  setInterval(other, 500);
+  setInterval(other, 700);
 }
 function loadHTML(page){
   currentPage = page;
