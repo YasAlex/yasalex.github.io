@@ -29,12 +29,12 @@ function loadHTML(page){
   document.getElementById('bodie').innerHTML="";
    fetch('https://yasalex.github.io/FMCLV001/navbar.html')
   .then(response=> response.text())
-  .then(text=> document.getElementById('bodie').innerHTML = text);
+  .then(text=> {document.getElementById('bodie').innerHTML = text; document.getElementById('sensorTitle').innerHTML=varSensorName;});
   
    fetch(page)
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
-  document.getElementById('sensorTitle').innerHTML=varSensorName;
+  
 }
 
 function loadContent(page){
