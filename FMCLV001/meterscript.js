@@ -71,7 +71,7 @@ function other()
         document.getElementById('connectionLabel').innerHTML = "Device Not Connected";
     };
   xhttp.open("GET", varFileDir);
-  xhttp.timeout=600; //Updated from 450 to 600 for Cloud OverHead
+  xhttp.timeout=800; //Updated from 450 to 800 for Cloud OverHead
   try {xhttp.send(null);}catch (error) {}
 }
 function N0P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X0")}
