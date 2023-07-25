@@ -36,7 +36,7 @@ function loadHTML(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 
-  document.getElementById('sensor-text').innerHTML  = "Hola Mundo";
+  document.getElementById('snrtxt').innerHTML  = "Hola Mundo";
 }
 
 function loadContent(page){
