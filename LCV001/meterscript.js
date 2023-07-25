@@ -20,7 +20,7 @@ function aboutFn()
 
 function DataLoad() {
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
-  document.getElementById('sensor-text').innerHtml = SensorNameVar;
+  document.getElementById('sensor-text').innerHtml = "Hola Mundo";
   setInterval(other, 500);
 }
 function loadHTML(page){
