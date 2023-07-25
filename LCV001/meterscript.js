@@ -37,7 +37,7 @@ function loadHTML(page){
   .then(text=> document.getElementById('content').innerHTML = text);
 
   document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById('snrtxt').innerHTML = "Hola Mundo";
+            
         });
 }
 
@@ -52,7 +52,7 @@ function loadContent(page){
 
 function other()
 {
-  
+  try{document.getElementById('snrtxt').innerHTML = SensorNameVar;}catch(error){}
      var dt = new Date();
      try{document.getElementById('date').innerHTML=dt;}catch(error){loadContent(currentPage);}
   var xhttp = new XMLHttpRequest();
