@@ -36,7 +36,9 @@ function loadHTML(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 
-  document.getElementById('snrtxt').innerHTML  = "Hola Mundo";
+  document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById('snrtxt').innerHTML = "Hola Mundo";
+        });
 }
 
 function loadContent(page){
