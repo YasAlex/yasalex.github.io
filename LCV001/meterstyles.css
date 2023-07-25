@@ -1,0 +1,207 @@
+body {caret-color: transparent;
+	background-color: rgb(66, 66, 66); margin:0px;   font-family: Tahoma, "Gill Sans", Helvetica, sans-serif ;  clear: both;}
+	.center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+	.left{
+    float:left;
+    display: block;
+    //position: fixed;
+    //margin-left: 0;
+    //margin-right: auto;
+    width: 150px;
+	}
+	.myDiv {
+	 
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    
+    background-color: #36444B;//rgb(100, 150, 255);
+    text-align: center;
+  }
+  .myDiv h2{
+    top: 50%;
+    left: 50%;
+     margin-right: 10px;
+    text-align: right;
+    color: white;
+  }
+  .myDiv h1{
+    margin-top:0px;
+    margin-bottom:0px;
+    text-align: right;
+    color: white;
+  }
+  
+  .titleDiv {
+	 
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    
+    background-color: rgb(40, 40, 40);//rgb(190, 190, 190);
+    text-align: center;
+  }
+  .titleDiv h1{
+    margin-top:0px;
+    margin-bottom:0px;
+    text-align: center;
+    //color: rgb(230, 230, 230);
+    color: white;
+  }
+  
+  @media (min-width: 700px) {
+    .displayDiv{
+      
+      width: 600px;
+      margin: auto;
+     
+      text-align: justify;
+   } 
+  }
+  @media (max-width: 699px) {
+    .displayDiv{
+      
+      width: 80%;
+      margin: auto;
+     
+      text-align: justify;
+   } 
+  }
+  
+	h1   {color: rgb(0, 80, 200); }
+	p    {color: rgb(200, 200, 200);
+        margin-top:0px;
+        margin-bottom:0px;}
+        
+  table {
+    font-size: 250%;
+    border-style: none;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    color:white;
+  }
+  th, td{
+    width: 250px;
+    border-style: none;
+  }
+ ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  background-color: #111;
+}
+.split {
+  height: 100%;
+  
+  position: fixed;
+  z-index: 1;
+  //top: 0;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.leftsp {
+  left:0%;
+  width: 40%;
+  background-color:rgb(80,80,80);
+}
+
+.rightsp {
+  right: 0%;
+  width: 60%;
+  background-color: rgb(100,100,100);
+}
+
+.centeredsp {
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  transform: translate(-50%, -0%);
+  text-align: center;
+}
+.smoll {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  transform: translate(-0%, -0%);
+  text-align: center;
+}
+
+.centeredsp img {
+  width: 150px;
+  border-radius: 50%;
+}
+.centeredsp  td{
+    text-align: left;
+  }
+
+  .smoll table{
+      font-size: 90%;
+      width: 180px;
+  }
+  .smoll td, .smoll th{
+      width: 50px;
+  }
+
+@media (min-width: 349px) {
+  .centeredsp table{
+      font-size: 90%;
+      width: 180px;
+  }
+  .centeredsp td, .centeredsp th{
+      width: 50px;
+  }
+}
+
+@media (min-width: 650px) {
+  .centeredsp table{
+      font-size: 100%;
+      width: 200px;
+  }
+  .centeredsp td, .centeredsp th{
+      width: 50px;
+  }
+}
+
+@media (min-width: 750px) {
+  .centeredsp table{
+      font-size: 150%;
+      width: 300px;
+  }
+   .centeredsp td, .centeredsp th{
+      width: 50px;
+  }
+}
+
+@media (min-width: 1000px) {
+  .centeredsp table{
+      font-size: 200%;
+      width: 400px;
+  }
+   .centeredsp td, .centeredsp th{
+      width: 50px;
+  }
+}
