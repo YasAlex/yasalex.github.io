@@ -207,3 +207,24 @@ function makeTextRequest(url, timeout) {
     }
   });
 }
+function generateTableFromText(sensorTextStructure) {
+  // Dividir el texto en líneas utilizando el separador "\r\n"
+  const lines = sensorTextStructure.split("\r\n");
+  
+  // Inicializar una variable para almacenar la tabla HTML
+  let tableHTML = '<table>\n<tr>\n<th>PARAM</th>\n<th>VAL</th>\n</tr>\n';
+  
+  // Recorrer cada línea y extraer los nombres de las variables y sus valores
+  for (const line of lines) {
+    const [name, value] = line.split(", ");
+    const idAttributeValue = name.trim().toLowerCase(); // Convertir el nombre a minúsculas para usar como ID
+    
+    // Agregar la fila a la tabla con el nombre y el valor
+    tableHTML += `<tr>\n<td>${name}</td>\n<td id="${idAttributeValue}">${value}</td>\n</tr>\n`;
+  }
+  
+  // Cerrar la etiqueta de la tabla
+  tableHTML += '</table>';
+  
+  return tableHTML;
+}
