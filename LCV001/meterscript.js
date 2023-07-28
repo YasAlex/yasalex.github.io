@@ -36,11 +36,15 @@ function loadHTML(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 
-  try{
-   fetch('https://yasalex.github.io/LCV001/indicators.html')
-  .then(response=> response.text())
-  .then(text=> document.getElementById('indicators').innerHTML = text);
-  }catch(error){}
+  document.addEventListener("DOMContentLoaded", () => {
+      // Aquí puedes realizar las acciones que desees cuando el documento se haya cargado
+      console.log("El documento se ha cargado completamente.");
+      // ... Otras acciones ...
+    
+     fetch('https://yasalex.github.io/LCV001/indicators.html')
+    .then(response=> response.text())
+    .then(text=> document.getElementById('indicators').innerHTML = text);
+  });
 }
 
 function loadContent(page){
