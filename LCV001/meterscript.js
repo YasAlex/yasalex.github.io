@@ -1,13 +1,16 @@
 var currentPage="";
+var sectionIndicators="";
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
-  loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
+  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
+  loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
 }
 function newsFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdtwo.html');
-  loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
+  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
+  loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
 }
 function contactFn()
 {
@@ -38,9 +41,13 @@ function loadHTML(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 
-  loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 500);
-
-
+  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 500);
+  getTextFrom('https://yasalex.github.io/LCV001/indicators.html')
+  .then(textoObtenido => {
+     sectionIndicators = textoObtenido;
+  });
+  
+  loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
 }
 function loadSectionDelay(page, place, delay)
 {
@@ -48,6 +55,18 @@ function loadSectionDelay(page, place, delay)
       loadSection(page,place);
       
     }, delay); // Simulamos una modificación después de 2 segundos
+}
+function loadSectionFromTextDelay(text, place, delay)
+{
+   setTimeout(() => {
+      loadSectionFromText(text,place);
+      
+    }, delay); // Simulamos una modificación después de 2 segundos
+}
+function loadSectionFromText(text, place)
+{
+   document.getElementById(place).innerHTML="";
+   document.getElementById(place).innerHTML = text;
 }
 function loadSection(page, place)
 {
@@ -65,7 +84,19 @@ function loadContent(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 }
-
+function getTextFrom(page) {
+  return fetch(page)
+    .then(response => response.text())
+    .then(text => {
+      // Asignar el texto obtenido a la variable global
+      GlobalObtainedText = text;
+      return text;
+    })
+    .catch(error => {
+      console.error('Error al obtener el texto:', error);
+      return null; // Opcional: Puedes manejar el error y devolver un valor por defecto
+    });
+}
 function other()
 {
   try{document.getElementById('snrtxt').innerHTML = SensorNameVar;}catch(error){}
