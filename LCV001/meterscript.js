@@ -2,10 +2,12 @@ var currentPage="";
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
+  loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
 }
 function newsFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdtwo.html');
+  loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
 }
 function contactFn()
 {
@@ -36,16 +38,25 @@ function loadHTML(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 
-
-    setTimeout(() => {
-      fetch('https://yasalex.github.io/LCV001/indicators.html')
-      .then(response=> response.text())
-      .then(text=> document.getElementById('indicators').innerHTML = text);
-    }, 500); // Simulamos una modificación después de 2 segundos
+  loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 500);
 
 
 }
-
+function loadSectionDelay(page, place, delay)
+{
+    setTimeout(() => {
+      loadSection(page,place);
+      
+    }, delay); // Simulamos una modificación después de 2 segundos
+}
+function loadSection(page, place)
+{
+  document.getElementById(place).innerHTML="";
+  
+   fetch(page)
+  .then(response=> response.text())
+  .then(text=> document.getElementById(place).innerHTML = text);
+}
 function loadContent(page){
   currentPage = page;
   document.getElementById('content').innerHTML="";
