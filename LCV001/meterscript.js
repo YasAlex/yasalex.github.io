@@ -21,7 +21,7 @@ function aboutFn()
   //document.getElementById('display').innerHTML = "ABAU";
 }
 
-var SensorTextStructure;
+
 
 function DataLoad() {
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
@@ -109,19 +109,13 @@ function other()
    if (this.readyState == 4 && this.status == 200) {
      try{document.getElementById('connectionLabel').innerHTML = "";} catch(error){}
 
-     //try{var split_text = this.responseText.split('\r\n');          }catch(error){}
-     //try{document.getElementById('level').innerHTML=split_text[0];   }catch(error){}
-     //try{document.getElementById('liters').textContent=split_text[1];}catch(error){}
-     //try{document.getElementById('voltage').textContent=split_text[2];}catch(error){}
-     //try{document.getElementById('senhigh').textContent=split_text[3];   }catch(error){}
-     //try{document.getElementById('senlow').textContent=split_text[4];}catch(error){}
-     //try{document.getElementById('pump').textContent=split_text[5]; }catch(error){}
-
-     //Modificar la forma en la que se carga la tabla de indicadores
-    //var texTable = generateTableFromText(this.responseText);
-    //loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
-
-
+     try{var split_text = this.responseText.split('\r\n');          }catch(error){}
+     try{document.getElementById('level').innerHTML=split_text[0];   }catch(error){}
+     try{document.getElementById('liters').textContent=split_text[1];}catch(error){}
+     try{document.getElementById('voltage').textContent=split_text[2];}catch(error){}
+     try{document.getElementById('senhigh').textContent=split_text[3];   }catch(error){}
+     try{document.getElementById('senlow').textContent=split_text[4];}catch(error){}
+     try{document.getElementById('pump').textContent=split_text[5]; }catch(error){}
      
    }
   };
@@ -170,54 +164,3 @@ function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw
 
     // Iniciar la simulación del cambio de valor del indicador
     updateIndicatorLevel();
-
-
-function makeTextRequest(url, timeout) {
-  return new Promise(function(resolve) {
-    var xhttp = new XMLHttpRequest();
-    
-    xhttp.onreadystatechange = function() {
-      if (this.readyState == 4 && this.status == 200) {
-        resolve(this.responseText);
-      }
-    };
-    
-    xhttp.ontimeout = function() {
-      resolve(""); // Resuelve la promesa con un string vacío en caso de time-out
-    };
-    
-    xhttp.onerror = function() {
-      resolve(""); // Resuelve la promesa con un string vacío en caso de error
-    };
-    
-    xhttp.open("GET", url);
-    xhttp.timeout = timeout;
-    
-    try {
-      xhttp.send();
-    } catch (error) {
-      resolve(""); // Resuelve la promesa con un string vacío en caso de error en el envío
-    }
-  });
-}
-function generateTableFromText(sensorTextStructure) {
-  // Dividir el texto en líneas utilizando el separador "\r\n"
-  const lines = sensorTextStructure.split("\r\n");
-  
-  // Inicializar una variable para almacenar la tabla HTML
-  let tableHTML = '<table>\n<tr>\n<th>PARAM</th>\n<th>VAL</th>\n</tr>\n';
-  
-  // Recorrer cada línea y extraer los nombres de las variables y sus valores
-  for (const line of lines) {
-    const [name, value] = line.split(", ");
-    const idAttributeValue = name.trim().toLowerCase(); // Convertir el nombre a minúsculas para usar como ID
-    
-    // Agregar la fila a la tabla con el nombre y el valor
-    tableHTML += `<tr>\n<td>${name}</td>\n<td id="${idAttributeValue}">${value}</td>\n</tr>\n`;
-  }
-  
-  // Cerrar la etiqueta de la tabla
-  tableHTML += '</table>';
-  
-  return tableHTML;
-}
