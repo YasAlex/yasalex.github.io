@@ -96,3 +96,23 @@ function PRST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw
 function PPL(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xppl"   )}
 function RLON(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/1")}
 function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/0")}
+
+
+
+// Función para simular el cambio de valor del nivel del indicador
+    function updateIndicatorLevel() {
+      try{
+        const indicator = document.querySelector('.indicator-inner');
+        const maxLevel = 100; // Nivel máximo del indicador
+        const minLevel = 0;   // Nivel mínimo del indicador
+        const range = maxLevel - minLevel;
+        const timePeriod = 2000; // Período de tiempo para una subida y bajada completa (en milisegundos)
+        const currentTime = new Date().getTime();
+        const level = Math.sin(currentTime / timePeriod) * (range / 2) + (range / 2) + minLevel;
+        indicator.style.height = `${level}%`;
+      } catch (error){}
+      requestAnimationFrame(updateIndicatorLevel);
+    }
+
+    // Iniciar la simulación del cambio de valor del indicador
+    updateIndicatorLevel();
