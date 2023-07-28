@@ -118,8 +118,8 @@ function other()
      //try{document.getElementById('pump').textContent=split_text[5]; }catch(error){}
 
      //Modificar la forma en la que se carga la tabla de indicadores
-    var texTable = generateTableFromText(this.responseText);
-    loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
+    //var texTable = generateTableFromText(this.responseText);
+    //loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
 
 
      
