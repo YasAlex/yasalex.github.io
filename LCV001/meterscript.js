@@ -122,13 +122,19 @@ function other()
    if (this.readyState == 4 && this.status == 200) {
      try{document.getElementById('connectionLabel').innerHTML = "";} catch(error){}
 
-     try{var split_text = this.responseText.split('\r\n');          }catch(error){}
-     try{document.getElementById('level').innerHTML=split_text[0];   }catch(error){}
-     try{document.getElementById('liters').textContent=split_text[1];}catch(error){}
-     try{document.getElementById('voltage').textContent=split_text[2];}catch(error){}
-     try{document.getElementById('senhigh').textContent=split_text[3];   }catch(error){}
-     try{document.getElementById('senlow').textContent=split_text[4];}catch(error){}
-     try{document.getElementById('pump').textContent=split_text[5]; }catch(error){}
+     //try{var split_text = this.responseText.split('\r\n');          }catch(error){}
+     //try{document.getElementById('level').innerHTML=split_text[0];   }catch(error){}
+     //try{document.getElementById('liters').textContent=split_text[1];}catch(error){}
+     //try{document.getElementById('voltage').textContent=split_text[2];}catch(error){}
+     //try{document.getElementById('senhigh').textContent=split_text[3];   }catch(error){}
+     //try{document.getElementById('senlow').textContent=split_text[4];}catch(error){}
+     //try{document.getElementById('pump').textContent=split_text[5]; }catch(error){}
+
+     //Modificar la forma en la que se carga la tabla de indicadores
+    var texTable = generateTableFromText(this.responseText);
+    loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
+
+
      
    }
   };
