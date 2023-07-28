@@ -3,13 +3,13 @@ var sectionIndicators="";
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
-  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
+  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 100);
   loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
 }
 function newsFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdtwo.html');
-  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 600);
+  //loadSectionDelay('https://yasalex.github.io/LCV001/indicators.html','indicators', 100);
   loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
 }
 function contactFn()
