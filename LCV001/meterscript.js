@@ -25,7 +25,7 @@ var SensorTextStructure;
 
 function DataLoad() {
 
-  var MiTextoAdquirido = makeRequest(varFileDir, 450)
+  var MiTextoAdquirido = makeTextRequest(varFileDir, 450)
   .then(function(text) {
     SensorTextStructure =text;
 
