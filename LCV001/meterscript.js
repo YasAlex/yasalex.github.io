@@ -21,9 +21,22 @@ function aboutFn()
   //document.getElementById('display').innerHTML = "ABAU";
 }
 
-
+var SensorTextStructure;
 
 function DataLoad() {
+
+  var MiTextoAdquirido = makeRequest(varFileDir, 450)
+  .then(function(text) {
+    SensorTextStructure =text;
+
+    
+    //return text;
+  })
+  .catch(function(error) {
+    // Aquí manejas los errores, por ejemplo, el time-out o error en el envío
+    //return ""; // Devuelve un string vacío en caso de error o time-out
+  });
+  
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
   setInterval(other, 500);
@@ -164,3 +177,33 @@ function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw
 
     // Iniciar la simulación del cambio de valor del indicador
     updateIndicatorLevel();
+
+
+function makeTextRequest(url, timeout) {
+  return new Promise(function(resolve) {
+    var xhttp = new XMLHttpRequest();
+    
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        resolve(this.responseText);
+      }
+    };
+    
+    xhttp.ontimeout = function() {
+      resolve(""); // Resuelve la promesa con un string vacío en caso de time-out
+    };
+    
+    xhttp.onerror = function() {
+      resolve(""); // Resuelve la promesa con un string vacío en caso de error
+    };
+    
+    xhttp.open("GET", url);
+    xhttp.timeout = timeout;
+    
+    try {
+      xhttp.send();
+    } catch (error) {
+      resolve(""); // Resuelve la promesa con un string vacío en caso de error en el envío
+    }
+  });
+}
