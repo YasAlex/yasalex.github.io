@@ -47,7 +47,7 @@ function loadHTML(page){
      sectionIndicators = textoObtenido;
   });
   
-  loadSectionFromTextDelay(sectionIndicators, 'indicators',600);
+  loadSectionFromTextDelay(sectionIndicators, 'indicators',1000);
 }
 function loadSectionDelay(page, place, delay)
 {
