@@ -24,19 +24,6 @@ function aboutFn()
 var SensorTextStructure;
 
 function DataLoad() {
-
-  var MiTextoAdquirido = makeTextRequest(varFileDir, 450)
-  .then(function(text) {
-    SensorTextStructure =text;
-
-    
-    //return text;
-  })
-  .catch(function(error) {
-    // Aquí manejas los errores, por ejemplo, el time-out o error en el envío
-    //return ""; // Devuelve un string vacío en caso de error o time-out
-  });
-  
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
   setInterval(other, 500);
