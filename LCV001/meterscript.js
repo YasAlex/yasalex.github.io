@@ -36,9 +36,11 @@ function loadHTML(page){
   .then(response=> response.text())
   .then(text=> document.getElementById('content').innerHTML = text);
 
-  document.addEventListener("DOMContentLoaded", function() {
-            
-        });
+  try{
+   fetch('https://yasalex.github.io/LCV001/indicators.html')
+  .then(response=> response.text())
+  .then(text=> document.getElementById('indicators').innerHTML = text);
+  }catch(error){}
 }
 
 function loadContent(page){
