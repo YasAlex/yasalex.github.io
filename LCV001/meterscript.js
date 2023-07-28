@@ -45,9 +45,10 @@ function loadHTML(page){
   getTextFrom('https://yasalex.github.io/LCV001/indicators.html')
   .then(textoObtenido => {
      sectionIndicators = textoObtenido;
+     loadSectionFromTextDelay(sectionIndicators, 'indicators',1000);
   });
   
-  loadSectionFromTextDelay(sectionIndicators, 'indicators',1000);
+  
 }
 function loadSectionDelay(page, place, delay)
 {
