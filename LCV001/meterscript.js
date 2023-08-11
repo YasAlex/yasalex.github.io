@@ -133,7 +133,7 @@ function other()
         var hours = Math.floor(minutes / 60);
         var days = Math.floor(hours / 24);
 
-        document.getElementById('connectionLabel').innerHTML = "Device Not Connected, Attempts: "+disconnections.toString() + days + " dias " + hours + " hrs " + minutes " min " + seconds + " seg";
+        document.getElementById('connectionLabel').innerHTML = "Device Not Connected, Attempts: "+ disconnections.toString() + days + " dias " + hours + " hrs " + minutes + " min " + seconds + " seg";
         disconnections++;
   };
   xhttp.open("GET", varFileDir);
