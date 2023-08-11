@@ -1,5 +1,6 @@
 var currentPage="";
 var sectionIndicators="";
+var disconnections=0;
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
@@ -26,7 +27,7 @@ function aboutFn()
 function DataLoad() {
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
-  setInterval(other, 987);
+  setInterval(other, 495);
 }
 function loadHTML(page){
   currentPage = page;
@@ -107,6 +108,7 @@ function other()
   xhttp.onreadystatechange = function() {
   
    if (this.readyState == 4 && this.status == 200) {
+     disconnections=0;
      try{document.getElementById('connectionLabel').innerHTML = "";} catch(error){}
 
      try{var split_text = this.responseText.split('\r\n');          }catch(error){}
@@ -120,10 +122,11 @@ function other()
    }
   };
   xhttp.ontimeout = function () {
-        document.getElementById('connectionLabel').innerHTML = "Device Not Connected";
-    };
+        document.getElementById('connectionLabel').innerHTML = "Device Not Connected "+disconnections.toString();
+        disconnections++;
+  };
   xhttp.open("GET", varFileDir);
-  xhttp.timeout=510; //450
+  xhttp.timeout=450; //450
   try {xhttp.send(null);}catch (error) {}
 }
 function N0P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X0")}
