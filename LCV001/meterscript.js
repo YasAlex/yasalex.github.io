@@ -1,6 +1,7 @@
 var currentPage="";
 var sectionIndicators="";
 var disconnections=0;
+var latestConnectionTime;
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
@@ -109,6 +110,7 @@ function other()
   
    if (this.readyState == 4 && this.status == 200) {
      disconnections=0;
+     latestConnectionTime = new Date(); //Obtener marca de tiempo de ultima conexion
      try{document.getElementById('connectionLabel').innerHTML = "";} catch(error){}
 
      try{var split_text = this.responseText.split('\r\n');          }catch(error){}
@@ -122,7 +124,16 @@ function other()
    }
   };
   xhttp.ontimeout = function () {
-        document.getElementById('connectionLabel').innerHTML = "Device Not Connected, Attempts: "+disconnections.toString();
+        var currentDate = new Date();
+        var timeDifferenceMs = currentDate.getTime() - latestConnectionTime.getTime();
+
+        // Calcular días, horas, minutos y segundos
+        var seconds = Math.floor(timeDifferenceMs / 1000);
+        var minutes = Math.floor(seconds / 60);
+        var hours = Math.floor(minutes / 60);
+        var days = Math.floor(hours / 24);
+
+        document.getElementById('connectionLabel').innerHTML = "Device Not Connected, Attempts: "+disconnections.toString() + days + " dias " + hours + " hrs " + minutes " min " + seconds + " seg";
         disconnections++;
   };
   xhttp.open("GET", varFileDir);
