@@ -26,7 +26,7 @@ function aboutFn()
 function DataLoad() {
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
-  setInterval(other, 500);
+  setInterval(other, 850);
 }
 function loadHTML(page){
   currentPage = page;
