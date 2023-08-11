@@ -122,7 +122,7 @@ function other()
    }
   };
   xhttp.ontimeout = function () {
-        document.getElementById('connectionLabel').innerHTML = "Device Not Connected "+disconnections.toString();
+        document.getElementById('connectionLabel').innerHTML = "Device Not Connected, Attempts: "+disconnections.toString();
         disconnections++;
   };
   xhttp.open("GET", varFileDir);
