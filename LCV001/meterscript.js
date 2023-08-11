@@ -26,7 +26,7 @@ function aboutFn()
 function DataLoad() {
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
-  setInterval(other, 850);
+  setInterval(other, 987);
 }
 function loadHTML(page){
   currentPage = page;
@@ -123,7 +123,7 @@ function other()
         document.getElementById('connectionLabel').innerHTML = "Device Not Connected";
     };
   xhttp.open("GET", varFileDir);
-  xhttp.timeout=450;
+  xhttp.timeout=510; //450
   try {xhttp.send(null);}catch (error) {}
 }
 function N0P(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]+"/nw/X0")}
