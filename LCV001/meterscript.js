@@ -23,7 +23,8 @@ function enviarComandoXgpio(mtd) {
   var userInput = prompt("Ingrese el texto a enviar al servidor:");
   if (userInput !== null) {
     // Agregar una diagonal antes de concatenar la dirección IP
-    var url = "http://" + spli[2] + "/" + userInput;
+    var encodedInput = encodeURIComponent(userInput);
+    var url = "http://" + spli[2] + "/" + encodedInput;
     
     fetch(url, {
       method: mtd // Puedes cambiar el método según tus necesidades
