@@ -17,7 +17,25 @@ var opcionesFechaEs = {
                         // 'short' para una versión más corta (p. ej., GMT-06)
                         // También puedes usar 'narrow' para una versión aún más corta
 };
-
+function enviarComandoXgpio(mtd) {
+  var spli = varFileDir.split("/");
+  
+  var userInput = prompt("Ingrese el texto a enviar al servidor:");
+  if (userInput !== null) {
+    // Agregar una diagonal antes de concatenar la dirección IP
+    var url = "http://" + spli[2] + "/" + userInput;
+    
+    fetch(url, {
+      method: mtd // Puedes cambiar el método según tus necesidades
+    })
+    .then(response => {
+      // Manejar la respuesta aquí si es necesario
+    })
+    .catch(error => {
+      // Manejar el error aquí si es necesario
+    });
+  }
+}
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
@@ -178,7 +196,8 @@ function PRST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw
 function PPL(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xppl"   )}
 function RLON(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/0")}
 function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/1")}
-
+function SNGET(){enviarComandoXgpio('GET');}
+function SNPOST(){enviarComandoXgpio('POST');}
 // Función para simular el cambio de valor del nivel del indicador
     function updateIndicatorLevel() {
       try{
