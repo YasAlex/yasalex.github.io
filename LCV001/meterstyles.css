@@ -219,7 +219,7 @@ li a:hover {
 
 @media (min-width: 650px) {
   .centeredsp table{
-      font-size: 100%;
+      font-size: 95%;
       width: 200px;
   }
   .centeredsp td, .centeredsp th{
@@ -229,7 +229,7 @@ li a:hover {
 
 @media (min-width: 750px) {
   .centeredsp table{
-      font-size: 150%;
+      font-size: 105%;
       width: 300px;
   }
    .centeredsp td, .centeredsp th{
@@ -239,7 +239,7 @@ li a:hover {
 
 @media (min-width: 1000px) {
   .centeredsp table{
-      font-size: 200%;
+      font-size: 110%;
       width: 400px;
   }
    .centeredsp td, .centeredsp th{
