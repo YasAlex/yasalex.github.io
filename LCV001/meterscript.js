@@ -1,7 +1,7 @@
 var currentPage="";
 var sectionIndicators="";
 var disconnections=0;
-var latestConnectionTime;
+var latestConnectionTime=new Date();
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
@@ -125,7 +125,8 @@ function other()
   };
   xhttp.ontimeout = function () {
         var currentDate = new Date();
-        var timeDifferenceMs = currentDate.getTime() - latestConnectionTime.getTime();
+        var timeDifferenceMs = -1;
+        try {timeDifferenceMs = currentDate.getTime() - latestConnectionTime.getTime();}catch (error){}
 
         // Calcular días, horas, minutos y segundos
         var seconds = Math.floor(timeDifferenceMs / 1000);
