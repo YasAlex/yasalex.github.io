@@ -150,7 +150,10 @@ function other()
         var hours = Math.floor(minutes / 60);
         var days = Math.floor(hours / 24);
 
-        document.getElementById('connectionLabel').innerHTML = "Device Not Connected, Attempts: "+ disconnections.toString() + ", " + days + ":" + hours + ":" + minutes + ":" + seconds + "<br>Since: " + latestConnectionTime;
+        document.getElementById('connectionLabel').innerHTML =
+          "Device Not Connected, Attempts: "+ disconnections.toString() +
+          ", " + days + ":" + hours + ":" + minutes + ":" + seconds +
+          "<br>Since: " + latestConnectionTime.toLocaleString('es-ES', opcionesFechaEs);
         disconnections++;
   };
   xhttp.open("GET", varFileDir);
