@@ -28,7 +28,7 @@ function aboutFn()
 function DataLoad() {
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
-  setInterval(other, 495);
+  setInterval(other, 510);
 }
 function loadHTML(page){
   currentPage = page;
@@ -156,8 +156,8 @@ function CLR(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw
 function RST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xres/1" )}
 function PRST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xpr/0"  )}
 function PPL(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xppl"   )}
-function RLON(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/1")}
-function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/0")}
+function RLON(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/0")}
+function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/1")}
 
 
 
