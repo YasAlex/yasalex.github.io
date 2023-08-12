@@ -176,28 +176,8 @@ function CLR(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw
 function RST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xres/1" )}
 function PRST(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xpr/0"  )}
 function PPL(){ var spli = varFileDir.split("/");fetch("http://"+spli[2]  + "/nw/xppl"   )}
-//function RLON(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/0")}
-//function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/1")}
-function RLON()
-{ 
-  var spli = varFileDir.split("/");
-  // Ejemplo de uso de XMLHttpRequest
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://"+spli[2] + ":8888", true); // Cambia <IP_ESP> por la IP del ESP8266
-  xhr.send("Comando=ON"); // Enviar el comando deseado
-}
-
-
-
-function RLOF()
-{ 
-  var spli = varFileDir.split("/");
-    // Ejemplo de uso de XMLHttpRequest
-  var xhr = new XMLHttpRequest();
-  xhr.open("POST", "http://"+spli[2] + ":8888", true); // Cambia <IP_ESP> por la IP del ESP8266
-  xhr.send("Comando=OFF"); // Enviar el comando deseado
-}
-
+function RLON(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/0")}
+function RLOF(){ var spli = varFileDir.split("/");fetch("http://"+spli[2] + "/nw/xgpio/1")}
 
 // Función para simular el cambio de valor del nivel del indicador
     function updateIndicatorLevel() {
