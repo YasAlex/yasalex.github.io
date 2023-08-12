@@ -2,6 +2,22 @@ var currentPage="";
 var sectionIndicators="";
 var disconnections=0;
 var latestConnectionTime=new Date();
+var opcionesFechaEs = {
+  year: 'numeric',      // '2-digit' para el año en formato de dos dígitos
+  month: 'long',        // 'short' para el mes en formato corto (ene, feb, mar, etc.)
+  day: 'numeric',       // '2-digit' para el día en formato de dos dígitos
+  weekday: 'long',      // 'short' para el día de la semana en formato corto (lun, mar, etc.)
+  hour: '2-digit',      // 'numeric' para una hora sin ceros iniciales
+                        // '2-digit' para la hora en formato de dos dígitos
+  minute: '2-digit',    // 'numeric' para los minutos sin ceros iniciales
+                        // '2-digit' para los minutos en formato de dos dígitos
+  second: '2-digit',    // 'numeric' para los segundos sin ceros iniciales
+                        // '2-digit' para los segundos en formato de dos dígitos
+  timeZoneName: 'short' // 'long' para el nombre completo de la zona horaria
+                        // 'short' para una versión más corta (p. ej., GMT-06)
+                        // También puedes usar 'narrow' para una versión aún más corta
+};
+
 function homeFn()
 {
   loadContent('https://yasalex.github.io/LCV001/bdmain.html');
@@ -104,7 +120,7 @@ function other()
 {
   try{document.getElementById('snrtxt').innerHTML = SensorNameVar;}catch(error){}
      var dt = new Date();
-     try{document.getElementById('date').innerHTML=dt;}catch(error){loadContent(currentPage);}
+     try{document.getElementById('date').innerHTML=dt.toLocaleString('es-ES', opcionesFechaEs);}catch(error){loadContent(currentPage);}
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
   
