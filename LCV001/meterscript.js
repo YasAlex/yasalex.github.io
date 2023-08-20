@@ -2,6 +2,7 @@ var currentPage="";
 var sectionIndicators="";
 var disconnections=0;
 var latestConnectionTime=new Date();
+var cookieFormatoHora;
 var opcionesFechaEs = {
   year: 'numeric',      // '2-digit' para el año en formato de dos dígitos
   month: 'long',        // 'short' para el mes en formato corto (ene, feb, mar, etc.)
@@ -17,6 +18,42 @@ var opcionesFechaEs = {
                         // 'short' para una versión más corta (p. ej., GMT-06)
                         // También puedes usar 'narrow' para una versión aún más corta
 };
+var opcionesFechaEs12 = {
+  year: 'numeric',     
+  month: 'long',       
+  day: 'numeric',      
+  weekday: 'long',     
+  hour: '2-digit',     
+  minute: '2-digit',   
+  second: '2-digit',   
+  timeZoneName: 'short',
+  hour12: true // Agregar esta línea para usar formato de 12 horas
+};
+
+// Función para guardar un cookie
+function guardarCookie(nombre, valor, expiracion) {
+  document.cookie = `${nombre}=${valor};expires=${expiracion.toUTCString()};path=/`;
+}
+
+// Función para obtener el valor de un cookie
+function obtenerCookie(nombre) {
+  const cookies = document.cookie.split('; ');
+  for (const cookie of cookies) {
+    const [cookieNombre, cookieValor] = cookie.split('=');
+    if (cookieNombre === nombre) {
+      return cookieValor;
+    }
+  }
+  return null;
+}
+// Función para establecer el formato de hora en el cookie
+function setFormatoHora(formato) {
+  guardarCookie('formatoHora', formato, new Date(Date.now() + 365 * 24 * 60 * 60 * 1000)); // Caduca en 1 año
+  cargarFormatoHora();
+}
+function cargarFormatoHora() {
+  try{cookieFormatoHora = obtenerCookie('formatoHora');}catch(error){}
+}
 function enviarComandoXgpio(mtd) {
   var spli = varFileDir.split("/");
   
@@ -71,6 +108,7 @@ function aboutFn()
 
 
 function DataLoad() {
+  cargarFormatoHora(); //Cookie
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
   setInterval(other, 510);
@@ -149,7 +187,13 @@ function other()
 {
   try{document.getElementById('snrtxt').innerHTML = SensorNameVar;}catch(error){}
      var dt = new Date();
-     try{document.getElementById('date').innerHTML=dt.toLocaleString('es-ES', opcionesFechaEs);}catch(error){loadContent(currentPage);}
+     try{
+       if (cookieFormatoHora === '12') {
+        document.getElementById('date').innerHTML=dt.toLocaleString('es-ES', opcionesFechaEs12);
+       } else {
+        document.getElementById('date').innerHTML=dt.toLocaleString('es-ES', opcionesFechaEs);
+       }
+     }catch(error){loadContent(currentPage);}
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
   
