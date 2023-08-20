@@ -75,6 +75,7 @@ function enviarComandoXgpio(mtd) {
       try{
         // Obtener el elemento por su ID y actualizar su contenido
         var responseTbx = document.getElementById("responseTbx");
+        data = decodeURIComponent(data);
         responseTbx.innerHTML = `Respuesta: ${data}<br>Fecha: ${formattedDate}`;
       } 
       catch(error){}
