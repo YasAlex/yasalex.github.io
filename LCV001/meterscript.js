@@ -29,8 +29,18 @@ function enviarComandoXgpio(mtd) {
     fetch(url, {
       method: mtd // Puedes cambiar el método según tus necesidades
     })
-    .then(response => {
-      // Manejar la respuesta aquí si es necesario
+    .then(response => response.text())
+    .then(data => {
+      // Obtener la fecha actual formateada
+      var currentDate = new Date();
+      var formattedDate = currentDate.toLocaleString('es-ES', opcionesFechaEs);
+
+      try{
+        // Obtener el elemento por su ID y actualizar su contenido
+        var responseTbx = document.getElementById("responseTbx");
+        responseTbx.innerHTML = `Respuesta: ${data}<br>Fecha: ${formattedDate}`;
+      } 
+      catch(error){}
     })
     .catch(error => {
       // Manejar el error aquí si es necesario
