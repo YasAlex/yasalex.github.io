@@ -181,6 +181,8 @@ li a:hover {
 }
 
 .rightsp {
+  display: flex;
+  flex-direction: column;
   right: 0%;
   width: 60%;
   background-color: rgb(100,100,100);
@@ -212,11 +214,14 @@ li a:hover {
   .smoll table{
       font-size: 90%;
       width: 180px;
+      margin-left: 10px;
   }
   .smoll td, .smoll th{
       width: 50px;
   }
-
+.controlSection {
+    margin-left: 10px;
+}
 @media (min-width: 349px) {
   .centeredsp table{
       font-size: 90%;
