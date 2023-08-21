@@ -199,8 +199,9 @@ li a:hover {
   //position: absolute;
   //top: 0%;
   //left: 0%;
+  margin-left: 10px
   transform: translate(-0%, -0%);
-  text-align: center;
+  text-align: left;
 }
 
 .centeredsp img {
@@ -221,6 +222,7 @@ li a:hover {
   }
 .controlSection {
     margin-left: 10px;
+    text-align: left;
 }
 @media (min-width: 349px) {
   .centeredsp table{
