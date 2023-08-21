@@ -29,7 +29,13 @@ var opcionesFechaEs12 = {
   timeZoneName: 'short',
   hour12: true // Agregar esta línea para usar formato de 12 horas
 };
-
+function setFavicon(url) {
+  var link = document.createElement('link');
+  link.type = 'image/x-icon';
+  link.rel = 'shortcut icon';
+  link.href = url;
+  document.getElementsByTagName('head')[0].appendChild(link);
+}
 // Función para guardar un cookie
 function guardarCookie(nombre, valor, expiracion) {
   document.cookie = `${nombre}=${valor};expires=${expiracion.toUTCString()};path=/`;
@@ -109,6 +115,7 @@ function aboutFn()
 
 
 function DataLoad() {
+  setFavicon('https://yasalex.github.io/LCV001/favicon.png');
   cargarFormatoHora(); //Cookie
   loadHTML('https://yasalex.github.io/LCV001/bdmain.html');
   //
